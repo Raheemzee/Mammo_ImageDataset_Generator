@@ -4,3 +4,5 @@ medigan
 numpy
 opencv-python
 Pillow
+setuptools
+wheel
