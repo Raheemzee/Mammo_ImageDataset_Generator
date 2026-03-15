@@ -1,0 +1,5 @@
+Flask
+medigan
+numpy
+opencv-python
+Pillow
