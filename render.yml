@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: medical-generator
+    env: python
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: gunicorn app:app --timeout 120 --workers 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
