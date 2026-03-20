@@ -62,5 +62,7 @@ def view_image(filename):
     filepath = os.path.join(GENERATED_DIR, filename)
     return send_file(filepath, mimetype='image/png')
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render provides PORT
+    app.run(host="0.0.0.0", port=port)
