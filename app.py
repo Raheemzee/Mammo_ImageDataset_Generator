@@ -10,7 +10,7 @@ generators = Generators()
 
 # Map human-readable names to Medigan model IDs
 MODEL_MAP = {
-    "Mammogram Calcifications": "00001_DCGAN_MMG_CALC_ROI"
+    "Breast Density Transfer": "00003_CYCLEGAN_MMG_DENSITY_FULL"
 }
 
 # Folder for generated images
@@ -38,7 +38,7 @@ def index():
         model_id = MODEL_MAP.get(selected_model_name)
         if model_id:
             # Directly generate images with model_id
-            images = generators.generate(model_id=model_id, num_samples=num_samples, install_dependencies=True)
+            images = generators.generate(model_id=model_id, num_samples=num_samples, install_dependencies=True, gpu_id=0)
 
             # Save images
             for i, img in enumerate(images):
